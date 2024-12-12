@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.Interfaces;
 using TaskManager.Domain.Entities;
@@ -16,7 +17,8 @@ namespace TaskManager.API.Controllers
             _taskService = taskService;
         }
 
-        [HttpGet] 
+        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             var tasks = await _taskService.GetAllTasksAsync();
@@ -24,6 +26,7 @@ namespace TaskManager.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(Tasks task)
         {
             var newTask = await _taskService.AddTaskAsync(task);
