@@ -1,0 +1,88 @@
+# Build artifacts
+bin/
+obj/
+
+# .NET runtime files
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.cache
+*.ide
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Configuration files (local overrides)
+appsettings.Development.json
+appsettings.Local.json
+
+# Secrets (crucial para segurança)
+secrets.json
+
+# Rider/VSCode/Visual Studio configs
+.idea/
+.vscode/
+.vs/
+
+# Dependency directories
+node_modules/
+packages/
+
+# NuGet
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Docker
+**/Dockerfile
+**/docker-compose*.*
+
+# Generated files (local)
+*.local
+*.lock
+*.pid
+*.gz
+*.orig
+
+# JetBrains Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ReSharper
+_ReSharper*/
+
+# Coverage and testing
+coverage/
+*.coverage
+*.coveragexml
+TestResults/
+*.trx
+*.cobertura.xml
+
+# Azure Pipelines
+/.azuredevops/
+
+# Libman
+libman.json
+wwwroot/lib/
