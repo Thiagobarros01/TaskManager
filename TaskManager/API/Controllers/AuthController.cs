@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -17,16 +18,19 @@ namespace TaskManager.API.Controllers
         {
             _configuration = configuration;
         }
+        public class LoginRequest
+        {
+            public string Username { get; set; }
+            public string Password { get; set; }
+        }
 
 
         [HttpPost("Login")]
-        public IActionResult Login(string username, string password)
+        public IActionResult Login([FromBody] LoginRequest loginRequest)
         {
-
-            // Login mockado - Obs: usar identity em projetos reais
-            if (username == "admin" && password == "password")
+            if (loginRequest.Username == "admin" && loginRequest.Password == "password")
             {
-                var token = GenerateJwtToken(username);
+                var token = GenerateJwtToken(loginRequest.Username);
                 return Ok(new { token });
             }
 
